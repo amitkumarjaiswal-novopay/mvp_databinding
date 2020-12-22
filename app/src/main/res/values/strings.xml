@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">TestApp</string>
+    <string name="btn_save">save</string>
+    <string name="btn_login">login</string>
+</resources>
