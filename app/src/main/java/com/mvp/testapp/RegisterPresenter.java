@@ -53,35 +53,35 @@ public class RegisterPresenter implements RegisterContract.Presenter {
         isUpdate = true;
     }
 
-    private boolean isValidate() {
-        if (TextUtils.isEmpty(username.get())) {
-            mViewModel.showToast("enter username");
-            return false;
-        }
-        if (TextUtils.isEmpty(mobile.get())) {
-            mViewModel.showToast("enter mobile number");
-            return false;
-        }
-        if (TextUtils.isEmpty(email.get())) {
-            mViewModel.showToast("enter email");
-            return false;
-        }
-        if (TextUtils.isEmpty(password.get())) {
-            mViewModel.showToast("enter password");
-            return false;
-        }
+        private boolean isValidate() {
+            if (TextUtils.isEmpty(username.get())) {
+                mViewModel.showToast("enter username");
+                return false;
+            }
+            if (TextUtils.isEmpty(mobile.get())) {
+                mViewModel.showToast("enter mobile number");
+                return false;
+            }
+            if (TextUtils.isEmpty(email.get())) {
+                mViewModel.showToast("enter email");
+                return false;
+            }
+            if (TextUtils.isEmpty(password.get())) {
+                mViewModel.showToast("enter password");
+                return false;
+            }
 
-        if (!isUpdate) {
-            for (Contact contact : mContactList) {
-                if (contact.getEmail().equals(email.get())) {
-                    mViewModel.showToast("USer already exists");
-                    return false;
+            if (!isUpdate) {
+                for (Contact contact : mContactList) {
+                    if (contact.getEmail().equals(email.get())) {
+                        mViewModel.showToast("USer already exists");
+                        return false;
+                    }
                 }
             }
-        }
 
-        return true;
-    }
+            return true;
+        }
 
     @Override
     public void doLogin() {
